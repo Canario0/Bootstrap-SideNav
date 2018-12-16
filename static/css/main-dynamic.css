@@ -1,0 +1,102 @@
+
+html {
+    height: 100%;
+    margin: 0%;
+}
+
+/*---------------------------------------------Top Navigation---------------------------------------------*/
+nav {
+    height: 64px;
+}
+
+.title{
+    position: center;
+    font-weight: bold;
+}
+
+/*---------------------------------------------Top Side---------------------------------------------*/
+
+.side-nav{
+    min-width: 64px;
+    max-width: 200px;
+    width: 64px;
+    height: 100%;
+    background: white;
+    border-right-style: groove;
+    border-right-width: 1px;
+    overflow: hidden;
+    transition: width 20ms ease-out;
+}
+
+
+.side-title{
+    height: 64px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side-content{
+    padding: 5px;
+}
+
+.side-text{
+    visibility: hidden;
+    transition-delay: 3ms; 
+    transition: visibility 0ms;
+    overflow: hidden;
+}
+
+.role{
+    margin-top: 40px;
+
+}
+.side-options{
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.side-icons{
+    position: absolute;
+    top: 64px;
+}
+
+.side-icon{
+    color: black;
+    margin-bottom: 34px;
+    padding-left: 10px;
+}
+
+.user-icon{
+    width: 54px;
+    height: 54px;
+    background: white;
+    border-radius: 100%;
+    transition: all 100ms ease-out;
+}
+
+.list-group-item{
+    height: 60px;
+    margin-top: 0; 
+}
+/*---------------------------------------------Body---------------------------------------------*/
+#data-body {
+    margin-top: 64px;
+    margin-left: 64px;
+}
+
+
+/*---------------------------------------------Responsive Stuff---------------------------------------------*/
+@media screen and (max-width: 599px) {
+    nav {
+        height: 56px;
+    }
+
+    #data-body {
+        margin-top: 56px; 
+    }
+
+    .side.title{
+        height: 56px;
+    }
+}

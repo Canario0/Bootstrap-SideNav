@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GEAPROS</title>
+    <!-- Establecer el ancho al ancho del sistema y el zoom al 1 -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/main-static.css">
+    <!-- Link al css de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- barra principal del menú -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top pt-0">
+        <div class="d-inline-flex justify-content-center w-100 align-items-center">
+            <span class="navbar-brand title" style="font-size: 25px;">TITLE</span>
+        </div>
+    </nav>
+
+    <div id="side-nav" class="side-nav fixed-top flex-nowrap flex-column justify-content-start d-inline-flex align-items-center bg-light">
+
+
+        <div class="list-group w-100">
+            <div class="list-group-item align-items-start d-inline-flex justify-content-start bg-light side-title side-content">
+                <!-- User Section -->
+                <img id="user-img" class="user-icon" src="..\static\img\default-gravatar.png" alt="user icon">
+                <div class="side-content d-flex flex-column align-self-start" style="padding-top: 0%">
+                    <!-- User Name -->
+                    <div>User Name</div>
+                </div>
+            </div>
+
+            <a id="logout" class="list-group-item d-flex justify-content-start align-items-center bg-light">
+                <span class="fa fa-power-off fa-lg" style="color: black;"></span>
+                <span class="align-top side-options">Logout</span>
+            </a>
+
+            <a id="add-user" class="list-group-item d-flex justify-content-start align-items-center bg-light">
+                <span class="material-icons md-20" style="color: black;">person_add</span>
+                <span class="align-top side-options">Add User</span>
+            </a>
+            <!-- LIST 1 -->
+            <div class="collapsable">
+                <a id="List1" class="list-group-item d-flex justify-content-start align-items-center bg-light"
+                    data-toggle="collapse" href="#opciones-proyecto" onclick="openClose('List1-icon','List1')">
+                    <span class="fas fa-project-diagram fa-lg " style="color: black;"></span>
+                    <span class="align-top side-options">List 1</span>
+                    <span id="List1-icon" class="fa fa-plus fa-xs" style="color: black; margin-left: auto;"></span>
+                </a>
+
+                <div id="opciones-proyecto" class="collapse">
+                    <a class="list-group-item collapse d-flex justify-content-start align-items-center bg-light tree">
+                        <span class="fa fa-plus-square fa-md" style="color: black;"></span>
+                        <span class="align-top side-options" style="padding-left: 6px">Item 1</span>
+                    </a>
+                    <a  class="list-group-item collapse d-flex justify-content-start align-items-center bg-light tree">
+                        <span class="fas fa-project-diagram fa-md" style="color: black;"></span>
+                        <span class="align-top side-options">Item 2</span>
+                    </a>
+                    <a class="list-group-item collapse d-flex justify-content-start align-items-center bg-light tree">
+                        <span class="fas fa-project-diagram fa-md " style="color: grey;"></span>
+                        <span class="align-top side-options">Item 3</span>
+                    </a>
+                </div>
+                <!-- END LIST 1 -->
+                
+                <!-- LIST 2 -->
+                <a id="List2" class="list-group-item d-flex justify-content-start align-items-center bg-light"
+                    data-toggle="collapse" href="#opciones-actividad" onclick="openClose('List2-icon','List2')">
+                    <span class="fas fa-code fa-lg " style="color: black;"></span>
+                    <span class="align-top side-options">List 2</span>
+                    <span id="List2-icon" class="fa fa-plus fa-xs" style="color: black; margin-left: auto;"></span>
+                </a>
+
+                <div id="opciones-actividad" class="collapse">
+                    <a class="list-group-item collapse d-flex justify-content-start align-items-center bg-light tree">
+                        <span class="fas fa-code fa-md " style="color: black;"></span>
+                        <span class="align-top side-options">Item 1</span>
+                    </a>
+                    <a class="list-group-item collapse d-flex justify-content-start align-items-center bg-light tree">
+                        <span class="fas fa-code fa-md " style="color: grey;"></span>
+                        <span class="align-top side-options">Item 2</span>
+                    </a>
+                </div>
+                <!-- END LIST 2 -->
+            </div>
+
+        </div>
+    </div>
+
+    <div id="data-body" class="container-fluid">
+        <!-- Body -->
+        <div class="row justify-content-center align-content-center">
+            <h1 style="margin-top: 10px;">Wellcome to my <span style="font-weight: bolder;">static</span> side nav</h1>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <script>
+        function openClose(id, parent) {
+            var el = document.getElementById(id);
+            if (el.classList.contains('fa-plus')) {
+                el.classList.remove('fa-plus');
+                el.classList.add('fa-minus');
+                document.getElementById(parent).classList.add('show')
+                if (parent === 'List1') {
+                    let aux = document.getElementById('List2');
+                    if (aux.classList.contains('show')) {
+                        aux.classList.remove('show');
+                        aux.click();
+                    }
+                } else {
+                    let aux = document.getElementById('List1');
+                    if (aux.classList.contains('show')) {
+                        aux.classList.remove('show');
+                        aux.click();
+                    }
+                }
+            } else {
+                el.classList.remove('fa-minus');
+                el.classList.add('fa-plus');
+                document.getElementById(parent).classList.remove('show');
+            }
+        };
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
