@@ -78,9 +78,11 @@
         };
         function closeSide(id) {
             let el = document.getElementById(id);
-            el.classList.remove('open');
-            $('.collapse').collapse('hide')
-            document.getElementById('side-nav').style.width = "64px";
+            if (el.classList.contains('open')) {
+                el.classList.remove('open');
+                $('.collapse').collapse('hide')
+                document.getElementById('side-nav').style.width = "64px";
+            }
         };
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
